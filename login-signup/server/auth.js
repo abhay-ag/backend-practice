@@ -1,4 +1,5 @@
 const {data} = require('./users/package.json')
+const path = require('path')
 
 const auth = (req, res, next) => {
     const {uName, pass} = req.body;
@@ -14,6 +15,9 @@ const auth = (req, res, next) => {
 
     if(flag === 1){
         return res.status(200).send(`Hello, ${uName}`)
+
+        // sending a file in node.js
+        // return res.sendFile(path.resolve(__dirname,'../public/auth.html'))
     }else if(flag === 2){
         return res.status(401).send(`${uName}, you have entered wrong password!! Please try again`)
     }
