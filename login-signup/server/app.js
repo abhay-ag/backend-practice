@@ -10,6 +10,6 @@ app.use(express.urlencoded({extended: false}))
 // using middleware
 app.post('/login',auth, (req, res) => {})
 
-app.listen(5000, () => {
-    console.log('Server listening on port 5000...');
+app.listen(5500, () => {
+    console.log('Server listening on port 5500...');
 })
